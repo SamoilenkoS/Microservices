@@ -1,0 +1,12 @@
+﻿{
+    "profiles": {
+        "Microservices.CRM": {
+            "commandName": "Project",
+            "launchBrowser": true,
+            "applicationUrl": "http://localhost:4440",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        }
+    }
+}

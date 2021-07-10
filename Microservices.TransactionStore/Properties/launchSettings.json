@@ -1,0 +1,12 @@
+﻿{
+    "profiles": {
+        "Microservices.TransactionStore": {
+            "commandName": "Project",
+            "launchBrowser": true,
+            "applicationUrl": "http://localhost:4441",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        }
+    }
+}

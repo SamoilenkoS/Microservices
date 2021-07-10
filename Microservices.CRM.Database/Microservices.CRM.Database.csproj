@@ -1,0 +1,37 @@
+﻿<Project Sdk="MSBuild.Sdk.SqlProj/1.15.0">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SqlServerVersion>Sql140</SqlServerVersion>
+    <!-- For additional properties that can be set here, please refer to https://github.com/rr-wfm/MSBuild.Sdk.SqlProj#model-properties -->
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseName>CRMDBCourses</TargetDatabaseName>
+    <DeployScriptFileName>CRMDBCourses.sql</DeployScriptFileName>
+    <TargetConnectionString>Data Source=.;Integrated Security=True;Pooling=False;</TargetConnectionString>
+    <ProfileVersionNumber>1</ProfileVersionNumber>
+    <GenerateSmartDefaults>True</GenerateSmartDefaults>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Tables\Leads.sql" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <SqlCmdVariable Include="DbType">
+      <Value>mock</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="DbVer">
+      <Value>x.x.xxxx.xxxx</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PostDeploy Include="Post-Deployment\PostDeployment.sql" />
+    <PreDeploy Include="Pre-Deployment\PreDeployment.sql" />
+  </ItemGroup>
+
+</Project>
