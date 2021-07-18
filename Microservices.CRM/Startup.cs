@@ -1,3 +1,5 @@
+using MassTransit;
+using Microservices.CRM.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,6 +14,14 @@ namespace Microservices.CRM
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMassTransit(x =>
+            {
+                x.UsingRabbitMq();
+            });
+
+            services.AddMassTransitHostedService();
+
+            services.AddScoped<MoneyTransaction>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
