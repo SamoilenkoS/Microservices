@@ -12,6 +12,6 @@ namespace Microservices.CRM.Core
         [JsonIgnore]
         public Guid SenderAccountId { get; set; }
         [JsonIgnore]
-        public DateTime Timestamp { get; }
+        public DateTime Timestamp { get; set; }
     }
 }

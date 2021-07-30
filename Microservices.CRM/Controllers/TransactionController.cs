@@ -23,6 +23,8 @@ namespace Microservices.CRM.Controllers
         [HttpPost]
         public async Task DepositMoneyAsync([FromBody] MoneyTransaction moneyTransaction)
         {
+            moneyTransaction.SenderAccountId = Guid.NewGuid();
+            moneyTransaction.Timestamp = DateTime.Now;
             await _busControl.Publish(moneyTransaction);
         }
     }

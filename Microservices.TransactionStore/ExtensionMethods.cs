@@ -25,18 +25,8 @@ namespace Microservices.TransactionStore
         });
 
         bfc.OverrideDefaultBusEndpointQueueName(options.TemporaryQueue);
-        //bfc.UseExtensionsLogging(serviceProvider.GetService<ILoggerFactory>());
       });
     }
 
-    //public static IRestApiClient RestApiClient(string internalApiBaseUrl)
-    //{
-    //  var client = new RestApiClient(new RestApiClientSettings
-    //  {
-    //    BaseUrl = new Uri(internalApiBaseUrl)
-    //  });
-
-    //  return client;
-    //}
   }
 }
